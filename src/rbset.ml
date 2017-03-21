@@ -358,8 +358,8 @@ struct
   let split x s =
     let rec split_aux y (l, b, r) =
       let c = Ord.compare x y in
-        if c < 0 then l, b, add x r
-        else if c > 0 then add x l, b, r
+        if c < 0 then l, b, add y r
+        else if c > 0 then add y l, b, r
         else l, true, r
     in fold split_aux s (Empty, false, Empty)
 end
